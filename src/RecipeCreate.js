@@ -30,19 +30,17 @@ function RecipeCreate({recipes, setRecipes}) {
   // TODO: Add the required submit and change handlers
   
   return (
-    <form name="create">
+    <form name="create" onSubmit={submitHandler}>
       <table>
         <tbody>
           <tr>
-            <td><input id="recipeForm" onChange={handleChange} value={formData.name} name="name" type="text" placeholder="Name"/></td>
-            <td><input id="recipeForm" onChange={handleChange} value={formData.cuisine} name="cuisine" type="text" placeholder="Cuisine"/></td>
-            <td><input id="recipeForm" onChange={handleChange} value={formData.photo} name="photo" type="url" placeholder="URL"/></td>
-            <td><textarea id="recipeForm" onChange={handleChange} value={formData.ingredients} name="ingredients" placeholder="Ingredients"/></td>
-            <td><textarea id="recipeForm" onChange={handleChange} value={formData.preparation} name="preparation" placeholder="Preparation"/></td>
+            <td><input id="recipeForm" onChange={handleChange} value={formData.name} name="name" type="text" placeholder="Name" required/></td>
+            <td><input id="recipeForm" onChange={handleChange} value={formData.cuisine} name="cuisine" type="text" placeholder="Cuisine" required/></td>
+            <td><input id="recipeForm" onChange={handleChange} value={formData.photo} name="photo" type="url" placeholder="URL" required/></td>
+            <td><textarea id="recipeForm" onChange={handleChange} value={formData.ingredients} name="ingredients" placeholder="Ingredients" required/></td>
+            <td><textarea id="recipeForm" onChange={handleChange} value={formData.preparation} name="preparation" placeholder="Preparation" required/></td>
             <td>
-              <form id="recipeForm" onSubmit={submitHandler}>
                 <button   name="create" type="submit">Create</button>
-              </form>
             </td>
           </tr>
         </tbody>
